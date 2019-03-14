@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.min.css' />
+    <link rel="stylesheet" href="/css/theam.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/re-size.js"></script>
+  </head>
+  <body>
+   
+    <div class="">
+    	<div class="header">
+    		<h3>benchmark header <%=n%></h3>
+
+    	</div>
+    	<div class="left">
+    		<div class="items">
+    			<ul class="">
+    				<a href="/" class="item"><li > <span class="fa fa-mixcloud" ></span>数据统计</li></a>
+    				<a href="/query" class="item"><li ><span class="fa fa-search" ></span>查询</li></a>
+    				<a href="/email" class="item"><li ><span class="fa fa-envelope" ></span>Email</li></a>
+    				<a href="/setting" class="active item"><li ><span class="fa fa-cog fa-spin" ></span>设置</li></a>
+    			</ul>
+    		</div>
+    	</div>
+    	<div class="right">
+            <div class="box">
+                <table class="table table-hover table-striped table-bordered">
+                    <tr class="success">
+                        <th style="width: 25%">工单号</th>
+                       
+                        <th style="width: 25%">制稿</th>
+                        <th style="width: 25%">时间</th>
+                       
+                        <th style="width: 25%">状态</th>
+                    </tr>
+                    <% docs.forEach(function(item){%>
+                      <tr>
+                          <td><%=item.job.substring(6) %></td>
+                          
+                          <td><%=item.author.substring(6) %></td>
+                          <td><%=item.create_time.substring(3) %></td>
+                          
+                         
+                          <td><%=item.job_status %></td>
+                      </tr>
+                                  
+                    <% }) %>
+                   
+                </table>
+            </div>
+          
+    		
+    	</div>
+    	<script>
+    		$(function(){
+    			$('.left a').click(function(e){
+                    // e.preventDefault()
+    				$(this).addClass('active').siblings().removeClass('active')
+                    
+    			})
+    		})
+    	</script>
+    </div>
+  </body>
+</html>

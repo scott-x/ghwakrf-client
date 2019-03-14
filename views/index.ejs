@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.min.css' />
+    <link rel="stylesheet" href="/css/theam.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/re-size.js"></script>
+  </head>
+  <body>
+   
+    <div class="">
+    	<div class="header">
+    		<h3>benchmark header <%=n%></h3>
+
+    	</div>
+    	<div class="left">
+    		<div class="items">
+    			<ul class="">
+    				<a href="/" class="active item"><li > <span class="fa fa-mixcloud" ></span>数据统计</li></a>
+    				<a href="/query" class="item"><li ><span class="fa fa-search" ></span>查询</li></a>
+    				<a href="/email" class="item"><li ><span class="fa fa-envelope" ></span>Email</li></a>
+    				<a href="/setting" class="item"><li ><span class="fa fa-cog fa-spin" ></span>设置</li></a>
+    			</ul>
+    		</div>
+    	</div>
+    	<div class="right">
+            <div class="">
+               <div class="imgs">
+                 <div class="col-xs-6 col-md-3 fram">
+                   <a href="#" class="thumbnail">
+                     <img src="/imgs/1.jpg" alt="...">
+                   </a>
+                   <div> <h4>未开始</h4><p class="undo"><%=job_undo%></p></div>
+                 </div>
+                 <div class="col-xs-6 col-md-3 fram">
+                   <a href="#" class="thumbnail">
+                     <img src="/imgs/2.jpg" alt="...">
+                   </a>
+                   <div><h4>进行中</h4> <p class="running"><%=job_running%></p></div>
+                 </div>
+                 <div class="col-xs-6 col-md-3 fram">
+                   <a href="#" class="thumbnail">
+                     <img src="/imgs/3.jpg" alt="...">
+                   </a>
+                   <div>
+                      <h4>已结束</h4> <p class="archive"><%=job_archive%></p>
+                   </div>
+                 </div>
+                 
+               </div>
+            </div>
+          
+           
+            
+    		
+    	</div>
+    	<script>
+    		$(function(){
+    			$('.left a').click(function(e){
+                    // e.preventDefault()
+    				$(this).addClass('active').siblings().removeClass('active')
+    			})
+    		})
+    	</script>
+    </div>
+  </body>
+</html>
